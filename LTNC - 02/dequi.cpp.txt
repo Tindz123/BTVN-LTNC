@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+bool dequi (int target , int left , int right , vector<int>arr)
+{
+	if(left >=right)return false;
+	int mid = (right - left)/2;
+	if(arr[mid] == target) return true ;
+	if(arr[mid] < target) return dequi( target , left + 1, right , arr);
+	else if ( arr[mid] > target) return dequi(target , left , right -1 , arr);
+	else return false;
+}
+int main(){
+	int n ; cin >> n;
+	vector <int > a;
+	for(int i = 0 ; i < n ; i ++)
+	{
+		int x; cin >> x;
+		a.push_back(x);
+	}
+	sort(a.begin() , a.end());
+	int key ; cin >> key ;
+	int l = 0 ,r = n - 1 ;
+	if(dequi(key , l , r , a)) cout << "Yes" <<endl ;
+	else cout << "No" << endl;
+	return 0;
+}

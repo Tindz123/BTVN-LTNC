@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int generateRandomNumber();
+int getPlayerGuess();
+void printAnswer(int guess, int secretNumber);
+
+int main()
+{
+	int secretN = generateRandomNumber();
+	while(true)
+	{
+		int guessN = getPlayerGuess();
+		printAnswer(guessN , secretN);	
+		if(guessN == secretN){
+			cout << "Do you want to play more ? ( y : yes , other : no )" ;
+			char c ; cin >> c;
+			if(c == 'y')
+			{
+				secretN = generateRandomNumber();
+			}else break;
+		}
+	}
+	return 0;
+}
+
+int generateRandomNumber(){
+	srand(time(0));
+	return rand() % 100 + 1;
+}
+int getPlayerGuess(){
+	int playerN ;
+	cin >> playerN ;
+	return playerN ;
+}
+void printAnswer(int guess, int secretNumber)
+{
+	if(guess < secretNumber)
+	{
+		cout <<"It's too small !" << endl;
+	}else if ( guess > secretNumber)
+	{
+		cout<< "It's too big !" << endl ;
+	}else cout << "You win !" <<endl ;
+}
