@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+	// Complete the program
+  string a , b;
+  cin >> a >> b;
+  cout << a.size() << " " << b . size() << endl ;
+  cout << a + b << endl;
+//   string ans1 , ans2 ;
+//   for( int i = 1 ; i < a.size() ; i++)
+//   {
+//       ans1 += a[i];
+//   }
+//   for( int i = 1 ; i < b.size() ; i++)
+//   {
+//       ans2 += b[i];
+//   }
+//   cout << b[0] +ans1 <<" " << a[0] +ans2 <<endl;
+char temp1 = a[0];
+a.erase(0 , 1);
+char temp2 = b[0] ;
+b.erase(0 , 1);
+cout<<temp2+ a << " " << temp1 +b <<endl;
+    return 0;
+}
