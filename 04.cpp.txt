@@ -1,0 +1,32 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */  
+    int n ; cin >> n;
+    int q ; cin >> q ;
+    vector<vector<int>>v; 
+    while(n -- )
+    {
+        int k ; cin >> k;
+        vector<int>temp;
+        while(k--)
+        {
+            int x ; cin >> x;
+            temp.push_back(x);
+        }
+        v.push_back(temp);
+    }
+    while(q --)
+    {
+        int i , j ;
+        cin >> i >> j;
+        cout << v[i][j] <<endl ; 
+    }
+    return 0;
+}

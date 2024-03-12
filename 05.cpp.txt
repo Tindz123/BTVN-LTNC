@@ -1,0 +1,26 @@
+#include <vector>
+#include <algorithm>
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n; 
+    cin >> n;
+    
+    vector<int> a(n), b(n + 1);
+    
+    for(int &x : a) 
+        cin >> x;
+    for(int &x : b) 
+        cin >> x;
+    
+    set<int> v(a.begin(), a.end());
+    set<int> v2(b.begin(), b.end());
+
+    for(auto x : v2) {
+        if(v.count(x) == 0)
+            cout << x << " ";
+    }
+
+    return 0;
+}
