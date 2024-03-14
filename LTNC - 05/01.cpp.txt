@@ -1,0 +1,22 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+void func(int & x , int & y)
+{
+    int tmp1 = x , tmp2 = y;
+    x = tmp1 + tmp2;
+    y =(tmp1 - tmp2 > 0) ? tmp1 - tmp2 : tmp2 - tmp1;
+}
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */  
+    int a , b;
+    cin >> a >>b;
+    func(a , b);
+    cout << a << endl << b << endl;
+    return 0;
+}

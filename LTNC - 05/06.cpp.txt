@@ -1,0 +1,40 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <bits/stdc++.h>
+using namespace std;
+
+#define fi first
+#define se second
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    map<string , int>v;
+    int q ; cin >> q;
+    
+    
+    while(q--)
+    {
+        int x ; cin >> x;
+        string name;
+        int point;
+            
+        if(x == 1 )
+        {
+            cin >> name ;
+            cin >> point ;
+            v[name] += point;
+        }else if ( x == 2)
+        {
+            cin >> name;
+            v[name] = 0;
+        }else if (x == 3)
+        {
+            cin >> name;
+            cout << v[name] << endl ;
+        }
+    }
+    return 0;
+}

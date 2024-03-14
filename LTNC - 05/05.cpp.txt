@@ -1,0 +1,26 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int q ; cin >> q;
+    set<int>v;
+    while(q--)
+    {
+        int x , y ; cin >> x >> y;
+        if(x == 1) v.insert(y);
+        else if ( x == 2) v.erase(y);
+        else if ( x == 3) 
+        {
+            if(v.count(y) != 0) cout << "Yes" <<endl;
+            else cout <<"No" << endl;
+        }
+    }
+    return 0;
+}
