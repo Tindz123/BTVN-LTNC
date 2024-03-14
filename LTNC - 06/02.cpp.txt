@@ -1,0 +1,36 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+class student
+{
+public :
+    int age , tmp ;
+    string fN , lN;
+    
+    void set()
+    {
+        cin >> age >> fN >> lN >>tmp;
+    }
+    void print()
+    {
+        cout << age << "," << fN <<"," << lN <<","<<tmp ;
+    }
+  
+};
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */  
+    student a;
+    a.set() ;
+    cout << a.age <<endl;
+    cout << a.lN << ", "<< a.fN << endl;
+    cout << a.tmp << endl;
+    cout << endl;
+    a.print();
+     
+    return 0;
+}
