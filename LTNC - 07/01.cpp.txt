@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define int long long
+
+// fing the digit of position is key
+
+int binaryS(int left , int right ,int key , int arr[])
+{
+	int mid = (left + right )/2;
+	if(arr[mid] > key) return binaryS(left  ,right -1 , key , arr);
+	else if(arr[mid] < key)return binaryS(left + 1 ,right , key , arr);
+	else return mid;
+}
+
+int32_t main()
+{
+	int n ; cin >> n;
+	int a[n];
+	for(int &x : a)
+	{
+		cin >> x ;
+	}
+	sort(a , a + n);
+	int l = 0 , r = n -1;
+	int k ; cin >>k;
+	cout << binaryS(l , r , k , a) <<endl;
+	return 0;
+}
