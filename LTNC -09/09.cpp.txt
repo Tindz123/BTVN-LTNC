@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define int long long
+
+int n ;
+map<string,string>v;
+
+int32_t main()
+{
+    cin >> n ;
+    while(n--)
+    {
+        string a , b;
+        cin >> a >> b;
+        v.insert(make_pair(a , b));
+    }
+    string name;
+    while(cin >> name)
+    {
+        map<string , string>::iterator it;
+        it = v.find(name);
+        if(it != v.end())
+        {
+            cout << name << "=" << it -> second << endl;
+        }else cout << "Not found" << endl;
+    }
+    return 0;
+}
