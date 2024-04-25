@@ -1,0 +1,41 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+class powNum
+{
+public:
+   int n , p;
+       
+   int power(int n , int p)
+    {
+        if (n < 0 || p < 0) 
+        {
+            throw invalid_argument("n and p should be non-negative");
+        }
+        return pow(n, p);
+    }      
+};
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    powNum a;
+    int T; cin>> T;
+    while(T--)
+    {
+        int x , y;
+        cin >> x >> y;
+        try
+        {
+            cout << a.power(x ,y) <<endl;
+        }catch(const std::invalid_argument& e)
+        {
+            cout << "n and p should be non-negative" <<endl;
+        }
+    }
+   
+    return 0;
+}

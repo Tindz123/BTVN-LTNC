@@ -1,0 +1,29 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int d , m  , y;
+    int d2 , m2 , y2;
+    
+    cin >> d >> m >> y;
+    
+    cin >> d2 >> m2 >> y2;
+    if(y < y2){ cout << 0 <<endl; return 0 ;}
+    if(y > y2) {cout << 10000 <<endl; return 0;}
+    else
+    {
+        if(m > m2) {cout <<500*(m - m2) <<endl ; return 0;}
+        else 
+        {
+            if(d > d2){cout <<15 *(d - d2) <<endl; return 0;}
+            else cout << 0 <<endl;
+        }
+    }
+    
+    return 0;
+}
