@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define int long long
+
+void chuoitm(vector<char>temp , int length , string ans)
+{
+	if(length == 0)
+	{
+		cout << ans << endl;
+		return;
+	}
+	for(int i = 0 ; i < temp.size() ; ++i)
+	{
+		string tmp = ans + temp[i];
+		chuoitm(temp , length - 1, tmp);
+	}
+}
+
+int32_t main()
+{
+	vector<char>v = {'a' , 'b' , 'c' , 'd'};
+	string a ="";
+	int  n ; cin >>n;
+	chuoitm(v , n , a);
+	return 0;
+}
+
+
