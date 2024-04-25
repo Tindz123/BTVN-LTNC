@@ -1,0 +1,47 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+class Node
+    {
+    public:
+        int data;
+        Node *next;
+        
+    };
+Node *makeNode(int x)
+{
+    Node *temp = new Node();
+    temp->data = x;
+    temp->next = NULL;
+    return temp;
+}
+
+void pushF(Node *&head , int x)
+{
+    Node *temp = makeNode(x);
+    temp -> next = head;
+    head = temp;
+}
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    
+    int n;
+    cin >> n;
+    Node *head = nullptr;
+    while(n--)
+    {
+        int x; cin >> x;
+        pushF(head , x);
+    }
+    while(head)
+    {
+        cout << head-> data << endl;
+        head = head -> next;
+    }
+    return 0;
+}
